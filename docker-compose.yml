@@ -18,7 +18,7 @@ services:
       - 5432:5432
   bot:
     build:
-      context: ./
+      context: ./bot
       dockerfile: Dockerfile
     restart: always
     networks:
@@ -26,9 +26,22 @@ services:
         aliases:
           - bot
     volumes:
-      - './:/app'
+      - './bot:/app'
     depends_on:
       - pg
+  web-app:
+    build:
+      context: ./web-app
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      snova:
+        aliases:
+          - web-app
+    ports:
+      - '3000:3000'
+    volumes:
+      - './web-app:/opt/code'
   adminer:
     image: adminer
     restart: always
