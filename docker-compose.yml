@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  pg:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - './data/db:/var/liv/pgdata/data'
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    networks:
+      snova:
+        aliases:
+          - pg
+  bot:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      snova:
+        aliases:
+          - bot
+    volumes:
+      - './:/app'
+    depends_on:
+      - pg
+
+
+networks:
+  snova:
+    driver: bridge
