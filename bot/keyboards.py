@@ -17,7 +17,7 @@ menu = InlineKeyboardMarkup(inline_keyboard=[
 ], resize_keyboard=True)
 
 lk_menu = InlineKeyboardMarkup(inline_keyboard=[
-  InlineKeyboardButton(text='Изменить данные', web_app=WebAppInfo(url='https://youtube.com')),
-  InlineKeyboardButton(text='В главное меню', callback_data='customer')
+  [InlineKeyboardButton(text='Изменить данные', web_app=WebAppInfo(url='https://youtube.com'))],
+  [InlineKeyboardButton(text='В главное меню', callback_data='customer')]
 ], resize_keyboard=True)
 
