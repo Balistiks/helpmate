@@ -24,5 +24,5 @@ async def personal_area(callback: CallbackQuery):
   await callback.message.edit_text(f"""
 ФИО: {user.fio}
 Номер телефона: {user.phone_numebr}
-  """)
+  """, reply_markup=kb.lk_menu)
   await callback.answer()
