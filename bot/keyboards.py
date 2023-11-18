@@ -8,10 +8,11 @@ main = InlineKeyboardMarkup(inline_keyboard=[
 ], resize_keyboard=True)
 
 register = InlineKeyboardMarkup(inline_keyboard=[
-  [InlineKeyboardButton(text='Зарегестрироваться', web_app=WebAppInfo(url='https://localhost:3000/register'))]
-])
+  [InlineKeyboardButton(text='Зарегестрироваться', web_app=WebAppInfo(url='https://youtube.com'))]
+], resize_keyboard=True)
 
-
-
-
+menu = InlineKeyboardMarkup(inline_keyboard=[
+  [InlineKeyboardButton(text='Оставить заявку', web_app=WebAppInfo(url='https://youtube.com'))],
+  [InlineKeyboardButton(text='Личный кабинет', callback_data='lk')]
+], resize_keyboard=True)
 
