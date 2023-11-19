@@ -8,17 +8,22 @@ const RegisterPage = () => {
   const [adress, setAdress] = useState('')
 
   return(
-    <>
-      <p>Введите ФИО:</p>
-      <Input value={name} onChange={(value) => setName(value)} />
-      <p>Введите номер телефона:</p>
-      <Input value={phoneNumber} onChange={(value) => setPhoneNumber(value)} />
-      <p>Введите свой адрес:</p>
-      <Input value={adress} onChange={(value) => setAdress(value)} />
-      <div className="button-holder">
-        <button>Подвердить</button>
+    <div className="register-container">
+      <h2>Форма Регистрации</h2>
+      <div className="form-group">
+        <label htmlFor="name">Введите ФИО:</label>
+        <Input value={name} onChange={(value) => setName(value)} />
       </div>
-    </>
+
+      <div className="form-group">
+        <label htmlFor="phoneNumber">Введите номер телефона:</label>
+        <Input value={phoneNumber} onChange={(value) => setPhoneNumber(value)} />
+      </div>
+
+      <div className="button-holder">
+        <button >Подтвердить</button>
+      </div>
+    </div>
   );
 }
 
