@@ -6,9 +6,6 @@ const RegisterPage = () => {
   const [name, setName] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [adress, setAdress] = useState('')
-  const onChangeNameHandler = (value) => {
-    setName(value)
-  }
 
   return(
     <>
